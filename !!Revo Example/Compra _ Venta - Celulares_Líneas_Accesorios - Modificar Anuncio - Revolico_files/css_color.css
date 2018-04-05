@@ -1,0 +1,53 @@
+body{
+background: #FFFFFF;
+}
+
+#header {
+background-color: transparent;
+}
+
+/* Modules */
+#user1 div.module {
+background:#eff5fb;
+}
+
+#user1 div.module div {
+background: transparent url(../images/module_top.gif) top left no-repeat;
+}
+
+#user1 div.module div div {
+background: transparent url(../images/module_botton.gif)  bottom left no-repeat;
+}
+
+#ads
+{
+background-color: #eff5fb;
+}
+
+#leftpanel
+{
+background-color: #eff5fb;
+}
+
+.lefttop
+{
+background: transparent url(../images/left-top_corner18.gif) top left no-repeat;
+}
+
+.leftbot
+{
+background: transparent url(../images/left-bot_corner18.gif) bottom left no-repeat;
+}
+.righttop
+{
+background: transparent url(../images/right-top_corner18.gif) top right no-repeat;
+}
+.rightbot
+{
+background: transparent url(../images/right-bot_corner18.gif) bottom right no-repeat;
+}
+
+#footmenu
+{
+	background-color: #FFFFFF;
+}

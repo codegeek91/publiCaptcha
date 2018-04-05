@@ -1,0 +1,558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title></title>
+</head>
+<body>
+<b><%= header %></b>
+
+<form name = "insertad" action = "<%= url %>" enctype = "multipart/form-data" method = "post">
+
+    <table class="write_ad_table" border = "0" cellpadding = "5" cellspacing = "0">
+    <tbody>
+
+<tr class="captcha_row">
+                        <td colspan = "2" align = "left">
+
+                        </td>
+                    </tr>
+
+                    <tr class="captcha_row">
+                        <td colspan = "2" align = "left" style=" padding-bottom: 5px;">
+                            <div class="captcha_container captcha ">
+                                <div class="g-recaptcha" data-sitekey="6LfyRCIUAAAAAP5zhuXfbwh63Sx4zqfPmh3Jnjy7"></div></div>
+	                            <noscript>
+                                        <div>
+                                                <div style="width: 302px; height: 422px; position: relative;">
+                                                    <div style="width: 302px; height: 422px; position: absolute;">
+                                                        <iframe src="https://www.google.com/recaptcha/api/fallback?k=6LfyRCIUAAAAAP5zhuXfbwh63Sx4zqfPmh3Jnjy7"
+                                                                frameborder="0" scrolling="no"
+                                                                style="width: 302px; height:422px; border-style: none;">
+                                                        </iframe>
+                                                    </div>
+                                                </div>
+                                                <div style="width: 300px; height: 60px; border-style: none;
+                                                    bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px; background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                                                  <textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                                                            class="g-recaptcha-response"
+                                                            style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
+                                                                      margin: 10px 25px; padding: 0px; resize: none;">
+                                                  </textarea>
+                                                </div>
+                                            </div>
+                                </noscript>             
+                            
+                        </td>
+                    </tr>
+
+<tr>
+        <td style="padding: 20px 10px 0 10px">
+            <center>
+
+                <input  type="submit" name="send_form" value="Enviar" style=" width: 80px;">
+                &nbsp;
+
+                
+                    <input  type="button" name="cancel_form" value="Cancelar" style=" width: 80px;"  onClick="top.history.back();">
+
+                
+
+
+            </center>
+        </td>
+
+    </tr>
+
+    <tr>
+
+    <td class = "formBox">
+
+    <table align = "center" border = "0" cellpadding = "5" width = "100%" style="display:none">
+        <tbody>
+
+        <tr>
+            <td>
+                <hr noshade = "noshade" size = "1" width = "100%">
+
+                <table border = "0" cellpading = "0"  width = "100%">
+                    <tbody>
+                    <tr>
+                        <td align = "left">
+                            <strong>Precio</strong>
+                            <span class = "textGray">(opcional)</span>
+                        </td>
+
+
+                        <td align = "left" valign = "bottom">
+                            <strong>Categor�a</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td nowrap align = "left" valign = "middle" width = "120px" style="padding-bottom: 5px;">
+                            <input id="price_edit" class ="price " name = "ad_price" type = "text" value= '<%= price %>' >
+                            <strong>cuc</strong>&nbsp;
+                        </td>
+
+                        <td align = "left" valign = "middle" style="padding-bottom: 5px;">
+
+                            <select id="combobox" name="category" disabled='disabled' class="category ">
+
+                                <option value=''> Selecciona una categor�a </option>
+                                
+                                        <option  value="2">
+                                            Computadoras>>PC de Escritorio                                        </option>
+
+                                
+                                        <option  value="3">
+                                            Computadoras>>Laptop                                        </option>
+
+                                
+                                        <option  value="5">
+                                            Computadoras>>Microprocesador                                        </option>
+
+                                
+                                        <option  value="4">
+                                            Computadoras>>Monitor                                        </option>
+
+                                
+                                        <option  value="6">
+                                            Computadoras>>Motherboard                                        </option>
+
+                                
+                                        <option  value="7">
+                                            Computadoras>>Memoria RAM/FLASH                                        </option>
+
+                                
+                                        <option  value="8">
+                                            Computadoras>>Disco Duro Interno/Externo                                        </option>
+
+                                
+                                        <option  value="9">
+                                            Computadoras>>Chasis/Fuente                                        </option>
+
+                                
+                                        <option  value="11">
+                                            Computadoras>>Tarjeta de Video                                        </option>
+
+                                
+                                        <option  value="12">
+                                            Computadoras>>Tarjeta de Sonido/Bocinas                                        </option>
+
+                                
+                                        <option  value="13">
+                                            Computadoras>>Quemador/Lector DVD/CD                                        </option>
+
+                                
+                                        <option  value="14">
+                                            Computadoras>>Backup/UPS                                        </option>
+
+                                
+                                        <option  value="15">
+                                            Computadoras>>Impresora/Cartuchos                                        </option>
+
+                                
+                                        <option  value="16">
+                                            Computadoras>>Modem/Wifi/Red                                        </option>
+
+                                
+                                        <option  value="18">
+                                            Computadoras>>Webcam/Microf/Aud&iacute;fono                                        </option>
+
+                                
+                                        <option  value="19">
+                                            Computadoras>>Teclado/Mouse                                        </option>
+
+                                
+                                        <option  value="216">
+                                            Computadoras>>Internet/Email                                        </option>
+
+                                
+                                        <option  value="218">
+                                            Computadoras>>CD/DVD Virgen                                        </option>
+
+                                
+                                        <option  value="20">
+                                            Computadoras>>Otros                                        </option>
+
+                                
+                                        <option selected value="31">
+                                            Compra / Venta>>Celulares/L&iacute;neas/Accesorios                                        </option>
+
+                                
+                                        <option  value="32">
+                                            Compra / Venta>>Reproductor MP3/MP4/IPOD                                        </option>
+
+                                
+                                        <option  value="33">
+                                            Compra / Venta>>Reproductor DVD/VCD/DVR                                        </option>
+
+                                
+                                        <option  value="214">
+                                            Compra / Venta>>Televisor                                        </option>
+
+                                
+                                        <option  value="34">
+                                            Compra / Venta>>C&aacute;mara Foto/Video                                        </option>
+
+                                
+                                        <option  value="213">
+                                            Compra / Venta>>Aire Acondicionado                                        </option>
+
+                                
+                                        <option  value="39">
+                                            Compra / Venta>>Consola Videojuego/Juegos                                        </option>
+
+                                
+                                        <option  value="43">
+                                            Compra / Venta>>Sat&eacute;lite                                        </option>
+
+                                
+                                        <option  value="35">
+                                            Compra / Venta>>Electrodom&eacute;sticos                                        </option>
+
+                                
+                                        <option  value="36">
+                                            Compra / Venta>>Muebles/Decoraci&oacute;n                                        </option>
+
+                                
+                                        <option  value="37">
+                                            Compra / Venta>>Ropa/Zapato/Accesorios                                        </option>
+
+                                
+                                        <option  value="40">
+                                            Compra / Venta>>Intercambio/Regalo                                        </option>
+
+                                
+                                        <option  value="41">
+                                            Compra / Venta>>Mascotas/Animales                                        </option>
+
+                                
+                                        <option  value="42">
+                                            Compra / Venta>>Divisas                                        </option>
+
+                                
+                                        <option  value="38">
+                                            Compra / Venta>>Libros/Revistas                                        </option>
+
+                                
+                                        <option  value="211">
+                                            Compra / Venta>>Joyas/Relojes                                        </option>
+
+                                
+                                        <option  value="217">
+                                            Compra / Venta>>Antiguedades/Colecci&oacute;n                                        </option>
+
+                                
+                                        <option  value="219">
+                                            Compra / Venta>>Implementos Deportivos                                        </option>
+
+                                
+                                        <option  value="221">
+                                            Compra / Venta>>Arte                                        </option>
+
+                                
+                                        <option  value="44">
+                                            Compra / Venta>>Otros                                        </option>
+
+                                
+                                        <option  value="83">
+                                            Servicios>>Clases/Cursos                                        </option>
+
+                                
+                                        <option  value="71">
+                                            Servicios>>Inform&aacute;tica/Programaci&oacute;n                                        </option>
+
+                                
+                                        <option  value="72">
+                                            Servicios>>Pel&iacute;culas/Series/Videos                                        </option>
+
+                                
+                                        <option  value="73">
+                                            Servicios>>Limpieza/Dom&eacute;stico                                        </option>
+
+                                
+                                        <option  value="74">
+                                            Servicios>>Foto/Video                                        </option>
+
+                                
+                                        <option  value="75">
+                                            Servicios>>Construcci&oacute;n/Mantenimiento                                        </option>
+
+                                
+                                        <option  value="76">
+                                            Servicios>>Reparaci&oacute;n Electr&oacute;nica                                        </option>
+
+                                
+                                        <option  value="77">
+                                            Servicios>>Peluquer&iacute;a/Barber&iacute;a/Belleza                                        </option>
+
+                                
+                                        <option  value="78">
+                                            Servicios>>Restaurantes/Gastronom&iacute;a                                        </option>
+
+                                
+                                        <option  value="79">
+                                            Servicios>>Dise&ntilde;o/Decoraci&oacute;n                                        </option>
+
+                                
+                                        <option  value="80">
+                                            Servicios>>M&uacute;sica/Animaci&oacute;n/Shows                                        </option>
+
+                                
+                                        <option  value="81">
+                                            Servicios>>Relojero/Joyero                                        </option>
+
+                                
+                                        <option  value="220">
+                                            Servicios>>Gimnasio/Masaje/Entrenador                                        </option>
+
+                                
+                                        <option  value="82">
+                                            Servicios>>Otros                                        </option>
+
+                                
+                                        <option  value="101">
+                                            Vivienda>>Compra/Venta                                        </option>
+
+                                
+                                        <option  value="102">
+                                            Vivienda>>Permuta                                        </option>
+
+                                
+                                        <option  value="103">
+                                            Vivienda>>Alquiler a cubanos                                        </option>
+
+                                
+                                        <option  value="104">
+                                            Vivienda>>Alquiler a extranjeros                                        </option>
+
+                                
+                                        <option  value="105">
+                                            Vivienda>>Casa en la playa                                        </option>
+
+                                
+                                        <option value="121">
+                                            Autos>>Carros                                        </option>
+
+                                
+                                        <option  value="122">
+                                            Autos>>Motos                                        </option>
+
+                                
+                                        <option  value="215">
+                                            Autos>>Bicicletas                                        </option>
+
+                                
+                                        <option  value="125">
+                                            Autos>>Piezas/Accesorios                                        </option>
+
+                                
+                                        <option  value="124">
+                                            Autos>>Alquiler                                        </option>
+
+                                
+                                        <option  value="123">
+                                            Autos>>Mec&aacute;nico                                        </option>
+
+                                
+                                        <option  value="204">
+                                            Autos>>Otros                                        </option>
+
+                                
+                                        <option  value="161">
+                                            Empleos>>Ofertas de empleo                                        </option>
+
+                                
+                                        <option  value="162">
+                                            Empleos>>Busco empleo                                        </option>
+
+                                
+                            </select>
+
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="2" align = "left" valign = "middle">
+                            <strong>Encabezado</strong>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align = "left" valign = "middle" style="padding-bottom: 5px;">
+                            <input class = "headline " maxlength = "80" size="80"
+                                   name = "ad_headline" value = '<%= header %>' type = "text">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align = "left" valign = "middle">
+                            <strong>Texto del anuncio</strong>
+                            <span class = "textGray">(opcional)</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+
+                        <td colspan="2" align = "left" valign = "middle">
+                            <textarea class="text" cols="60" rows="7"
+                                      id = "body" name = "ad_text" wrap = "soft"><%= body %></textarea>
+                        </td>
+
+                    </tr>
+                    </tbody>
+                </table>
+
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+
+
+    <table align="center" border="0" cellpadding="5" width="100%" style="display:none">
+        <tbody>
+        <tr>
+            <td>
+                <hr noshade="noshade" size="1" width="100%">
+                        <table>
+                            <tr>
+                                <td colspan="2" align="left" height="30px">
+                                    <span class="textSmall"># 1:</span>
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="307200">
+                                    <input name="ad_picture_a"
+                                           id="ad_picture_a" size="20" maxlength="250" type="file"
+                                           accept="image/jpeg, image/gif, image/x-png">
+                                </td>
+                            </tr>
+
+
+                        </table>
+                    
+                        <table>
+                            <tr>
+                                <td colspan="2" align="left" height="30px">
+                                    <span class="textSmall"># 2:</span>
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="307200">
+                                    <input name="ad_picture_b"
+                                           id="ad_picture_b" size="20" maxlength="250" type="file"
+                                           accept="image/jpeg, image/gif, image/x-png">
+                                </td>
+                            </tr>
+
+
+                        </table>
+                    
+                        <table>
+                            <tr>
+                                <td colspan="2" align="left" height="30px">
+                                    <span class="textSmall"># 3:</span>
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="307200">
+                                    <input name="ad_picture_c"
+                                           id="ad_picture_c" size="20" maxlength="250" type="file"
+                                           accept="image/jpeg, image/gif, image/x-png">
+                                </td>
+                            </tr>
+
+
+                        </table>
+                    
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+    <table align = "center" border = "0" cellpadding = "5" width = "100%" style="display:none">
+        <tbody>
+        <tr>
+            <td>
+                <hr noshade = "noshade" size = "1" width = "100%">
+
+                <table border = "0" cellspacing = "0" width = "100%" >
+                    <tbody>
+
+                    <tr>
+                        <td colspan = "2" align = "left">
+                            <strong>Email</strong>
+                            
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align = "left" style=" padding-bottom: 5px;">
+                            <input                                 class = "textFieldLarge "
+                                name = "email" value='<%= email %>' size = "20" type = "text">
+                        </td>
+
+                        <td>
+                            <input type="radio" id="email-enabled-true" name="email_enabled" value="1"
+                                    checked="checked" > Utilizar direcci�n p�blica.
+                            <sup>
+                                [<a href="javascript:" class="pwtip" data-powertiptarget="email_help_content">?</a>]
+                            </sup><br>
+                            <input type="radio" id="email-enabled-false" name="email_enabled" value="0"
+                                   > No contactar por email.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan = "2" align = "left">
+                            <strong>Nombre</strong>
+                            <span class = "textGray">(opcional)</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan = "2" align = "left" style=" padding-bottom: 5px;">
+                            <input name = "name" value = '<%= name %>'
+                                   class = "textFieldLarge " size = "20" type = "text">
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td id="phone-label" colspan = "2" align = "left">
+                            <strong>Tel�fono</strong>
+                            <span class = "textGray">(opcional) </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan = "2" style=" padding-bottom: 5px;">
+                            <input name = "phone" value = '<%= phone %>'
+                                   class = "textFieldLarge " size = "20" type = "text">
+                        </td>
+                    </tr>
+
+
+                    
+
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    </td>
+
+
+
+    
+
+    </tbody>
+    </table>
+
+    </form>
+
+    <script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
+</body>
+
+</html>
