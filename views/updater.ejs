@@ -12,18 +12,39 @@
   </head>
   <body style="background-color: #e9ecef">
 
+      <div class="row">
         <% ads.forEach(function(ad){ %>
-            <iframe onmouseout="gg(this)" onload="test(this)" src="iframer?url=<%= ad.uri %>&price=<%= ad.adPrice %>&header=<%= ad.adHeader %>&body=<%= ad.adBody %>&email=<%= ad.adEmail %>&name=<%= ad.adPersonaName %>&phone=<%= ad.adPersonaPhone %>" width="18%" height="300px" style="border: 1px solid #dedede"></iframe>
+          <div class="col-sm-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text"><iframe onmouseout="gg(this)" onLoad="refresh(this)" src="iframer?url=<%= ad.uri %>&price=<%= ad.adPrice %>&header=<%= ad.adHeader %>&body=<%= ad.adBody %>&email=<%= ad.adEmail %>&name=<%= ad.adPersonaName %>&phone=<%= ad.adPersonaPhone %>&captchaid=<%= ad.adCaptchaId %>" width="100%" height="300px" style="border: 1px solid #dedede"></iframe></p>
+                  <a href="#" class="btn btn-primary" onclick="gg2(this)">Go somewhere</a>
+                </div>
+              </div>
+          </div>
+            
         <% }); %>
-
+      </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
-          $(window).on('load', function(){
-            console.log($('iframe'));
-          })
+          var iframeList = [];
 
-          var gg = function(e){
-            $(e).fadeOut();
+          /*$(window).on('load', function(){
+            console.log($('iframe'));
+          });*/
+
+          var refresh = function(e){
+            //console.log(e.src);    
+            //alert(e.src);
+            if(e.src.includes("anuncio-modificado")){
+              alert("yeyy");
+            }
+          }
+
+          var gg2 = function(e){
+            //$(e).fadeOut();
+            
             $('iframe').each(function(index, miframe){
               miframe.src = miframe.src;
             });
@@ -32,7 +53,16 @@
           var test = function(e){
             $(e)
           }
+
+          $(document).on("keypress", function (e) {
+            if(e.keyCode == 13){
+              $('iframe').each(function(index, miframe){
+                console.log(miframe.contentWindow.body)
+            });
+            }
+          });
         </script>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 </html>
