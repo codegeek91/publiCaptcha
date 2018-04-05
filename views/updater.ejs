@@ -13,7 +13,7 @@
   <body style="background-color: #e9ecef">
 
         <% ads.forEach(function(ad){ %>
-            <iframe onmouseout="gg(this)" onload="test(this)" src="iframer?url=<%= ad.uri %>&price=<%= ad.adPrice %>&header=<%= ad.adHeader %>&body=<%= ad.adBody %>&email=<%= ad.adEmail %>&name=<%= ad.adPersonaName %>&phone=<%= ad.adPersonaPhone %>&captchaid=<%= ad.adCaptchaId %>" width="18%" height="300px" style="border: 1px solid #dedede"></iframe>
+            <iframe onmouseout="gg(this)" onload="test(this)" src="iframer?url=<%= ad.uri %>&price=<%= ad.adPrice %>&header=<%= ad.adHeader %>&body=<%= ad.adBody %>&email=<%= ad.adEmail %>&name=<%= ad.adPersonaName %>&phone=<%= ad.adPersonaPhone %>" width="18%" height="300px" style="border: 1px solid #dedede"></iframe>
         <% }); %>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -38,7 +38,7 @@ router.get('/iframer',function(req, res, next) {
   var email = req.query.email;
   var name = req.query.name;
   var phone = req.query.phone;
-  var captchaid = req.query.captchaid
+  //var captchaid = req.query.captchaid
   console.log(captchaid);
   res.render('adTemplateMozilla', {
     url: url,
@@ -48,7 +48,7 @@ router.get('/iframer',function(req, res, next) {
     email: email,
     name: name,
     phone: phone,
-    captchaid: captchaid
+    //captchaid: captchaid
   });
 });
 
@@ -95,8 +95,8 @@ router.post('/postTest', function(req, res, next) {
             var adEmail = $('input[name="email"]').val();
             var adPersonaName = $('input[name="name"]').val();
             var adPersonaPhone = $('input[name="phone"]').val();
-            var captcha = $('#captcha').prop('src');
-            var captchaId = captcha.slice(captcha.indexOf('=')+1);
+            //var captcha = $('#captcha').prop('src');
+            //var captchaId = captcha.slice(captcha.indexOf('=')+1);
 
             var newAd = new Ad({
               uri: uri,
@@ -106,7 +106,7 @@ router.post('/postTest', function(req, res, next) {
               adEmail: adEmail,
               adPersonaName: adPersonaName,
               adPersonaPhone: adPersonaPhone,
-              adCaptchaId: captchaId
+              //adCaptchaId: captchaId
           });
           newAd.save(function(){res.json({success: true});});
           }      
