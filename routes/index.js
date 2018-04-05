@@ -39,7 +39,7 @@ router.get('/iframer',function(req, res, next) {
   var name = req.query.name;
   var phone = req.query.phone;
   //var captchaid = req.query.captchaid
-  console.log(captchaid);
+  //console.log(captchaid);
   res.render('adTemplateMozilla', {
     url: url,
     price: price,
