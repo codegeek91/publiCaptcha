@@ -83,7 +83,7 @@ router.post('/postTest', function(req, res, next) {
       res.json({success: false, reason: 'ADALREADYEXIST'});
     }else{
       var options = {
-        url: uri,
+        url: '104.131.92.81:3000',
         headers: {
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0'
         }
