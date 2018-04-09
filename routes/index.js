@@ -81,7 +81,13 @@ router.post('/postTest', function(req, res, next) {
     if (ad) {
       res.json({success: false, reason: 'ADALREADYEXIST'});
     }else{
-      request(uri, function(err, response, html) { 
+      var options = {
+        url: uri,
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1'
+        }
+      };
+      request(options, function(err, response, html) { 
         if(!err && response.statusCode == 200){
           var $ = cheerio.load(html);
           console.log(html);
