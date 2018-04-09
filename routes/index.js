@@ -8,6 +8,7 @@ var Ad = require("../models/ad");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  console.log(req.headers['user-agent']);
   res.render('index', { title: 'Express' });
 });
 
@@ -84,7 +85,7 @@ router.post('/postTest', function(req, res, next) {
       var options = {
         url: uri,
         headers: {
-          'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1'
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0'
         }
       };
       request(options, function(err, response, html) { 
