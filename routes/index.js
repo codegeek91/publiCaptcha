@@ -84,6 +84,7 @@ router.post('/postTest', function(req, res, next) {
       request(uri, function(err, response, html) { 
         if(!err && response.statusCode == 200){
           var $ = cheerio.load(html);
+          console.log(html);
           var error = $('.errorText').text();
           if(error.includes('caducado')){
             res.json({success: false, reason: 'ADNOTEXIST'});
