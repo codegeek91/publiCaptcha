@@ -86,13 +86,9 @@ router.post('/postTest', function(req, res, next) {
         url: uri,
         headers: {
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0',
-          accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-          'accept-language': 'en-US,en;q=0.5',
-          'accept-encoding': 'gzip, deflate',
           cookie: '_ga=GA1.1.559186633.1506998310',
           connection: 'keep-alive',
           'upgrade-insecure-requests': '1',
-          'if-none-match': 'W/"aa-SNfgj6aecdqLGkiTQbf9lQ"',
         }
       };
       request(options, function(err, response, html) { 
