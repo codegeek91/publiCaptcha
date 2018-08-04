@@ -8,7 +8,7 @@ var Ad = require("../models/ad");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log(req.headers);
+  //console.log(req.headers);
   res.render('index', { title: 'Express' });
 });
 
@@ -86,7 +86,7 @@ router.post('/postTest', function(req, res, next) {
       request(uri, function(err, response, html) { 
         if(!err && response.statusCode == 200){
           var $ = cheerio.load(html);
-          console.log(html);
+          //console.log(html);
           var error = $('.errorText').text();
           if(error.includes('caducado')){
             res.json({success: false, reason: 'ADNOTEXIST'});
