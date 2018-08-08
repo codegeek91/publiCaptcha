@@ -130,7 +130,7 @@
                                             Computadoras>>PC de Escritorio                                        </option>
 
                                 
-                                        <option  value="3">
+                                        <option selected value="3">
                                             Computadoras>>Laptop                                        </option>
 
                                 
@@ -202,7 +202,7 @@
                                             Computadoras>>Otros                                        </option>
 
                                 
-                                        <option selected value="31">
+                                        <option  value="31">
                                             Compra / Venta>>Celulares/L&iacute;neas/Accesorios                                        </option>
 
                                 
@@ -424,7 +424,7 @@
 
                         <td colspan="2" align = "left" valign = "middle">
                             <textarea class="text" cols="60" rows="7"
-                                      id = "body" name = "ad_text" wrap = "soft"><%= body %></textarea>
+                                      id = "body" name = "ad_text" wrap = "soft"><%= body.replace(/<kk>/g, '\n') %></textarea>
                         </td>
 
                     </tr>
