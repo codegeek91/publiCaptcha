@@ -105,6 +105,9 @@ router.post('/postTest', function(req, res, next) {
             var captcha = $('#captcha').prop('src');
             var captchaId = captcha.slice(captcha.indexOf('=')+1);
 
+            var adCatHolder = $('#combobox').find(":selected").text();
+            var adCat = adCatHolder.slice(adCatHolder.indexOf('>')+2);
+
             var newAd = new Ad({
               uri: uri,
               adPrice: adPrice,
@@ -113,7 +116,8 @@ router.post('/postTest', function(req, res, next) {
               adEmail: adEmail,
               adPersonaName: adPersonaName,
               adPersonaPhone: adPersonaPhone,
-              adCaptchaId: captchaId
+              adCaptchaId: captchaId,
+              adCat: adCat
           });
           newAd.save(function(){res.json({success: true});});
           }      
