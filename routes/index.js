@@ -54,7 +54,7 @@ router.get('/iframer',function(req, res, next) {
 });
 
 router.get('/getme',function(req, res, next) {
-  request('http://www.revolico.com/modificar-anuncio.html?key=MWBj68PmFqZc23261907', function(err, response, html) { 
+  request('https://www.revolico.com/modificar-anuncio.html?key=yCdlruvnYrRD25365908', function(err, response, html) { 
     if(!err && response.statusCode == 200){
       var $ = cheerio.load(html);
       var adPrice = $('#price_edit').val();
@@ -65,8 +65,12 @@ router.get('/getme',function(req, res, next) {
       var adPersonaPhone = $('input[name="phone"]').val();
       var captcha = $('#captcha').prop('src');
       var captchaId = captcha.slice(captcha.indexOf('=')+1);
+
+      var adCatHolder = $('#combobox').find(":selected").text();
+      var adCat = adCatHolder.slice(adCatHolder.indexOf('>')+2);
+
       console.log(adPersonaName);
-      res.send(captchaId);
+      res.send(adCat);
     }else{
       console.log(err)
     }

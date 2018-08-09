@@ -8,7 +8,8 @@ var adSchema = mongoose.Schema({
     adEmail: { type: String, required: true},
     adPersonaName: { type: String, required: true},
     adPersonaPhone: { type: String, required: true},
-    adCaptchaId: { type: String, required: true}
+    adCaptchaId: { type: String, required: true},
+    adCat: {type: String, required: true}
 });
 
 var Ad = mongoose.model("Ad", adSchema);
