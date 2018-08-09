@@ -106,7 +106,7 @@ router.post('/postTest', function(req, res, next) {
             var captchaId = captcha.slice(captcha.indexOf('=')+1);
 
             var adCatHolder = $('#combobox').find(":selected").text();
-            var adCat = adCatHolder.slice(adCatHolder.indexOf('>')+2);
+            var adCat = adCatHolder.slice(adCatHolder.indexOf('>')+2).trim();
 
             var newAd = new Ad({
               uri: uri,
