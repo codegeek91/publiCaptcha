@@ -26,8 +26,49 @@ router.get('/ejs', function(req, res, next) {
 router.get('/updater', function(req, res, next) {
   Ad.find({}, function(err,ads){
     console.log(ads);
-    res.render('updater', {ads: ads});
-  })
+    if(ads === undefined || ads.length == 0){
+      res.send('NO ADS');
+    }else{
+      res.render('updater', {ads: ads});
+    }
+  });
+  
+});
+
+router.get('/admin', function(req, res, next) {
+  Ad.find({}, function(err,ads){
+    //console.log(ads);
+    res.render('admin', {ads: ads});
+  });
+  
+});
+
+router.get('/admin/ads', function(req, res, next) {
+  //res.send(req.query.cat);
+  var queryCat = req.query.cat;
+  if(queryCat.includes('celulares')){
+    Ad.find({adCat: 'Celulares/Líneas/Accesorios'}, function(err,ads){
+      //res.send(ads);
+      res.render('adList', {ads: ads, cat: 'celulares'});
+    });
+  }else if(queryCat.includes('laptop')){
+    Ad.find({adCat: 'Laptop'}, function(err,ads){
+      //res.send(ads);
+      res.render('adList', {ads: ads, cat: 'laptop'});
+    });
+  }
+});
+
+router.post('/admin/delete_ad', function(req, res, next) {
+  Ad.findByIdAndRemove(req.body.id, function(err,ads){
+    //console.log(ads);
+    if(ads){
+      res.send('OK');
+    }else{
+      res.send('NOEXIST')
+    }
+    
+  });
   
 });
 

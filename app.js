@@ -17,7 +17,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 //====================================== DB init
-var dbURI = 'mongodb://localhost/publiCaptcha';
+var dbURI = 'mongodb://142.93.61.207/publiCaptcha';
 mongoose.connect(dbURI);
 var db = mongoose.connection;
 
