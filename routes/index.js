@@ -56,6 +56,11 @@ router.get('/admin/ads', function(req, res, next) {
       //res.send(ads);
       res.render('adList', {ads: ads, cat: 'laptop'});
     });
+  }else{
+    Ad.find({adCat: 'otros'}, function(err,ads){
+      //res.send(ads);
+      res.render('adList', {ads: ads, cat: 'otros'});
+    });
   }
 });
 
@@ -148,6 +153,12 @@ router.post('/postTest', function(req, res, next) {
 
             var adCatHolder = $('#combobox').find(":selected").text();
             var adCat = adCatHolder.slice(adCatHolder.indexOf('>')+2).trim();
+
+            if (adCat.includes("laptop") || adCat.includes("celulares")){
+              adCat = adCat;
+            }else{
+              adCat = 'otros';
+            }
 
             var newAd = new Ad({
               uri: uri,
