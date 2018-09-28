@@ -154,7 +154,7 @@ router.post('/postTest', function(req, res, next) {
             var adCatHolder = $('#combobox').find(":selected").text();
             var adCat = adCatHolder.slice(adCatHolder.indexOf('>')+2).trim();
 
-            if (adCat.includes("laptop") || adCat.includes("celulares")){
+            if (adCat.includes("Laptop") || adCat.includes("Celulares")){
               adCat = adCat;
             }else{
               adCat = 'otros';
